@@ -68,14 +68,41 @@
 
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
-# TODO!
+# movie.destroy_all
+# person.destroy_all
+# role.destroy_all
 
-# Generate models and tables, according to the domain model
-# TODO!
+# # Generate models and tables, according to the domain model
+
+# rails generate model movie
+# rails db:migrate
+# rails generate model person
+# rails db:migrate
+# rails generate model role
+# rails db:migrate
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
-# TODO!
+movie1 = Movie.new
+movie1.title = "Batman Begins"
+movie1.year_released = "2005"
+movie1.rated = "PG-13"
+movie1.director_id = "1"
+movie1.save
+
+movie2 = Movie.new
+movie2.title = "The Dark Knight"
+movie2.year_released = "2008"
+movie2.rated = "PG-13"
+movie2.director_id = "1"
+movie2.save
+
+movie3 = Movie.new
+movie3.title = "The Dark Knight Rises"
+movie3.year_released = "2012"
+movie3.rated = "PG-13"
+movie3.director_id = "1"
+movie3.save
 
 # Prints a header for the movies output
 puts "Movies"
@@ -86,10 +113,10 @@ puts ""
 # TODO!
 
 # Prints a header for the cast output
-puts ""
-puts "Top Cast"
-puts "========"
-puts ""
+# puts ""
+# puts "Top Cast"
+# puts "========"
+# puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
 # TODO!
