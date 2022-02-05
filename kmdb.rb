@@ -243,12 +243,25 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output
 
+ all_movies = Movie.all
 
-# Prints a header for the cast output
-# puts ""
-# puts "Top Cast"
-# puts "========"
-# puts ""
+for movie in all_movies
+     movie_dir = Person.where({id: movie.director_id})[0].name
+     puts "#{movie.title}    #{movie.year_released}    #{movie.rated}    #{movie_dir}"
+
+ end
+
+#Prints a header for the cast output
+puts ""
+puts "Top Cast"
+puts "========"
+puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
-# TODO!
+
+all_roles = Role.all
+for role in all_roles
+    mov_name = Movie.where({id:role.movie_id})[0].title
+    act_name = Person.where({id:role.actor_id})[0].name
+    puts "#{mov_name}               #{act_name}           #{role.character_name}"
+end
